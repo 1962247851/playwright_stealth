@@ -38,9 +38,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="$(SolutionDir)logo.png" Pack="true" Visible="false" PackagePath="\" />
-    <None Include="$(SolutionDir)README.md" Pack="true" Visible="false" PackagePath="\" />
-    <None Include="$(SolutionDir)LICENSE" Pack="true" Visible="false" PackagePath="\" />
+    <None Include="$(MSBuildThisFileDirectory)logo.png" Pack="true" Visible="false" PackagePath="\" />
+    <None Include="$(MSBuildThisFileDirectory)README.md" Pack="true" Visible="false" PackagePath="\" />
+    <None Include="$(MSBuildThisFileDirectory)LICENSE" Pack="true" Visible="false" PackagePath="\" />
   </ItemGroup>
 
   <ItemGroup>
