@@ -1,7 +1,7 @@
 using System;
 using System.Threading.Tasks;
 
-namespace ManagedCode.Playwright.Stealth.Tests;
+namespace OrdinaryRoad.Playwright.Stealth.Tests;
 
 internal static class PlaywrightInstall
 {

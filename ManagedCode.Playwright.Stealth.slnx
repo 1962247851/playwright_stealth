@@ -1,4 +1,0 @@
-<Solution>
-  <Project Path="src/Playwright.Stealth/ManagedCode.Playwright.Stealth.csproj" />
-  <Project Path="tests/Playwright.Stealth.Tests/ManagedCode.Playwright.Stealth.Tests.csproj" />
-</Solution>

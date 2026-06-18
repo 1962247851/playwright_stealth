@@ -1,19 +1,19 @@
-# ManagedCode.Playwright.Stealth
+# OrdinaryRoad.Playwright.Stealth
 
 Stealth tweaks for Microsoft.Playwright to reduce bot-detection signals.
 
 ## General
 
 * Keep the public API stable; only add new APIs when requested.
-* Use the latest C# features (C# 14) and .NET 10.
+* Use C# 12 and .NET 8.
 * Respect nullable reference types and treat warnings as errors.
 * Keep stealth scripts under `src/Playwright.Stealth/Resources/js` in sync with `StealthScriptProvider`.
 
 ## Build and Test
 
 ```bash
-dotnet build -c Release ManagedCode.Playwright.Stealth.slnx
-dotnet test --solution ManagedCode.Playwright.Stealth.slnx -c Release
+dotnet build -c Release OrdinaryRoad.Playwright.Stealth.sln
+dotnet test OrdinaryRoad.Playwright.Stealth.sln -c Release
 ```
 
 Integration tests auto-install Playwright browsers on first run via `Microsoft.Playwright.Program.Main`.

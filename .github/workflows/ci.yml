@@ -7,7 +7,7 @@ on:
     branches: [ main ]
 
 env:
-  DOTNET_VERSION: '10.0.x'
+  DOTNET_VERSION: '8.0.x'
   PLAYWRIGHT_INSTALL_DEPS: '1'
 
 jobs:
@@ -25,10 +25,10 @@ jobs:
         dotnet-version: ${{ env.DOTNET_VERSION }}
 
     - name: Restore dependencies
-      run: dotnet restore ManagedCode.Playwright.Stealth.slnx
+      run: dotnet restore OrdinaryRoad.Playwright.Stealth.sln
 
     - name: Build
-      run: dotnet build ManagedCode.Playwright.Stealth.slnx --configuration Release --no-restore
+      run: dotnet build OrdinaryRoad.Playwright.Stealth.sln --configuration Release --no-restore
 
     - name: Test
-      run: dotnet test --solution ManagedCode.Playwright.Stealth.slnx --configuration Release --no-build --verbosity normal
+      run: dotnet test OrdinaryRoad.Playwright.Stealth.sln --configuration Release --no-build --verbosity normal

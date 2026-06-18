@@ -1,18 +1,18 @@
-# ManagedCode.Playwright.Stealth (.NET)
+# OrdinaryRoad.Playwright.Stealth (.NET)
 
-ManagedCode.Playwright.Stealth applies a curated set of init scripts to Microsoft.Playwright contexts to reduce common bot-detection signals. It adapts the original `playwright_stealth` scripts for .NET with ManagedCode conventions.
+OrdinaryRoad.Playwright.Stealth applies a curated set of init scripts to Microsoft.Playwright contexts to reduce common bot-detection signals. It adapts the original `playwright_stealth` scripts for .NET 8.
 
 ## Install
 
 ```bash
-dotnet add package ManagedCode.Playwright.Stealth
+dotnet add package OrdinaryRoad.Playwright.Stealth
 ```
 
 ## Quick Start
 
 ```csharp
 using Microsoft.Playwright;
-using ManagedCode.Playwright.Stealth;
+using OrdinaryRoad.Playwright.Stealth;
 
 using var playwright = await Playwright.CreateAsync();
 
@@ -215,7 +215,7 @@ These sites can change at any time. If a site changes, update the corresponding 
 Run tests (Playwright browsers install automatically on first run):
 
 ```bash
-dotnet test --solution ManagedCode.Playwright.Stealth.slnx -c Release
+dotnet test OrdinaryRoad.Playwright.Stealth.sln -c Release
 ```
 
 On Linux CI runners, set `PLAYWRIGHT_INSTALL_DEPS=1` to install system dependencies
@@ -224,7 +224,7 @@ On Linux CI runners, set `PLAYWRIGHT_INSTALL_DEPS=1` to install system dependenc
 Google search verification is optional (Google may block automated traffic). Enable it with:
 
 ```bash
-RUN_GOOGLE_SEARCH_TESTS=1 dotnet test --solution ManagedCode.Playwright.Stealth.slnx -c Release
+RUN_GOOGLE_SEARCH_TESTS=1 dotnet test OrdinaryRoad.Playwright.Stealth.sln -c Release
 ```
 
 ## Attribution

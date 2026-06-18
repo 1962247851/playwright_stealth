@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <IsTestProject>true</IsTestProject>
-    <RootNamespace>ManagedCode.Playwright.Stealth.Tests</RootNamespace>
+    <RootNamespace>OrdinaryRoad.Playwright.Stealth.Tests</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
@@ -12,7 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\Playwright.Stealth\ManagedCode.Playwright.Stealth.csproj" />
+    <ProjectReference Include="..\..\src\Playwright.Stealth\OrdinaryRoad.Playwright.Stealth.csproj" />
   </ItemGroup>
 
 </Project>

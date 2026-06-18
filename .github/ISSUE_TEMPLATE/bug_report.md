@@ -1,6 +1,6 @@
 ---
 name: Bug report
-about: Report a problem with ManagedCode.Playwright.Stealth
+about: Report a problem with OrdinaryRoad.Playwright.Stealth
 title: '[BUG] '
 labels: bug
 assignees: ''
@@ -31,7 +31,7 @@ A clear and concise description of what you expected to happen.
 ```
 
 ## Environment
-- **ManagedCode.Playwright.Stealth Version:**
+- **OrdinaryRoad.Playwright.Stealth Version:**
 - **Microsoft.Playwright Version:**
 - **.NET Version:**
 - **OS:**

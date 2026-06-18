@@ -2,12 +2,12 @@ using System.Globalization;
 using System.IO;
 using System.Text.Json;
 using Microsoft.Playwright;
-using ManagedCode.Playwright.Stealth;
+using OrdinaryRoad.Playwright.Stealth;
 using TUnit.Assertions;
 using TUnit.Assertions.Extensions;
 using TUnit.Core;
 
-namespace ManagedCode.Playwright.Stealth.Tests;
+namespace OrdinaryRoad.Playwright.Stealth.Tests;
 
 public sealed class StealthIntegrationTests
 {
@@ -92,14 +92,14 @@ public sealed class StealthIntegrationTests
 
     [Test]
     [GoogleSearchOnly]
-    public async Task GoogleSearch_Should_Find_ManagedCode()
+    public async Task GoogleSearch_Should_Find_OrdinaryRoad()
     {
         await WithPageAsync(applyStealth: true, async page =>
         {
             var label = "google_search";
             try
             {
-                var searchUrl = "https://www.google.com/search?q=managed+code+software+company+managed-code.com&hl=en&gl=us&num=10&safe=off";
+                var searchUrl = "https://www.google.com/search?q=ordinaryroad+github&hl=en&gl=us&num=10&safe=off";
                 await NavigateWithRetriesAsync(page, searchUrl);
                 await TryAcceptGoogleConsentAsync(page);
                 await page.WaitForSelectorAsync("#search", new PageWaitForSelectorOptions
@@ -114,8 +114,8 @@ public sealed class StealthIntegrationTests
                         .filter(href => href)
                 """);
 
-                var hasManagedCode = links.Any(link => link.Contains("managed-code.com", StringComparison.OrdinalIgnoreCase));
-                await Assert.That(hasManagedCode).IsTrue();
+                var hasOrdinaryRoad = links.Any(link => link.Contains("ordinaryroad", StringComparison.OrdinalIgnoreCase));
+                await Assert.That(hasOrdinaryRoad).IsTrue();
             }
             finally
             {

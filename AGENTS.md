@@ -1,6 +1,6 @@
-# ManagedCode.Playwright.Stealth
+# OrdinaryRoad.Playwright.Stealth
 
-Owner: ManagedCode maintainers
+Owner: OrdinaryRoad maintainers
 
 ## Self-Learning Rules
 - When the user states a clear directive ("always", "never", "the process is", "remember this"), add it to "Rules to follow" with the task scope it applies to.
@@ -25,7 +25,7 @@ Owner: ManagedCode maintainers
 - Test order: new/modified tests, then related suites, then full required suites.
 
 ## Coding Rules
-- C# 14, .NET 10, nullable enabled, warnings treated as errors.
+- C# 12, .NET 8, nullable enabled, warnings treated as errors.
 - Avoid breaking public API without explicit request.
 - Apply stealth to the browser context before creating pages.
 - JS scripts live in `src/Playwright.Stealth/Resources/js`; keep file names in sync with `StealthScriptProvider`.
@@ -33,10 +33,10 @@ Owner: ManagedCode maintainers
 - Centralize test URLs and constants; avoid scattering literal duplicates.
 
 ## Commands
-- build: `dotnet build -c Release ManagedCode.Playwright.Stealth.slnx`
-- analyze: `dotnet build -c Release /p:RunAnalyzers=true ManagedCode.Playwright.Stealth.slnx`
-- test: `dotnet test --solution ManagedCode.Playwright.Stealth.slnx -c Release`
-- test:google: `RUN_GOOGLE_SEARCH_TESTS=1 dotnet test --solution ManagedCode.Playwright.Stealth.slnx -c Release`
+- build: `dotnet build -c Release OrdinaryRoad.Playwright.Stealth.sln`
+- analyze: `dotnet build -c Release /p:RunAnalyzers=true OrdinaryRoad.Playwright.Stealth.sln`
+- test: `dotnet test OrdinaryRoad.Playwright.Stealth.sln -c Release`
+- test:google: `RUN_GOOGLE_SEARCH_TESTS=1 dotnet test OrdinaryRoad.Playwright.Stealth.sln -c Release`
 - format: `dotnet format --verify-no-changes`
 
 ## Maintainer Preferences

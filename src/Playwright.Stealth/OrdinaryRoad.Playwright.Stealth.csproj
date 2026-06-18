@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <PackageId>OrdinaryRoad.Playwright.Stealth</PackageId>
+    <Title>OrdinaryRoad.Playwright.Stealth</Title>
+    <Description>Stealth evasion library for Microsoft.Playwright (.NET 8). Applies 31 init-script patches that mask headless Chrome fingerprints - navigator properties, WebGL, canvas, audio, CDP traces, automation markers and more. Validated against 9 public bot-detection sites.</Description>
+    <PackageTags>playwright;stealth;bot-detection;headless;fingerprint;anti-detect;web-scraping;automation</PackageTags>
+    <RootNamespace>OrdinaryRoad.Playwright.Stealth</RootNamespace>
+    <AssemblyName>OrdinaryRoad.Playwright.Stealth</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Playwright" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Resources/js/*.js" />
+  </ItemGroup>
+
+</Project>

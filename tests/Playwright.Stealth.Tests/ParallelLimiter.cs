@@ -1,9 +1,9 @@
 using TUnit.Core;
 using TUnit.Core.Interfaces;
 
-[assembly: ParallelLimiter<ManagedCode.Playwright.Stealth.Tests.MaxParallelTestsForPipeline>]
+[assembly: ParallelLimiter<OrdinaryRoad.Playwright.Stealth.Tests.MaxParallelTestsForPipeline>]
 
-namespace ManagedCode.Playwright.Stealth.Tests;
+namespace OrdinaryRoad.Playwright.Stealth.Tests;
 
 /// <summary>
 /// Limits parallel test execution to reduce resource contention in CI.

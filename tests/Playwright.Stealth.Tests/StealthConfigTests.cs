@@ -1,9 +1,9 @@
-using ManagedCode.Playwright.Stealth;
+using OrdinaryRoad.Playwright.Stealth;
 using TUnit.Assertions;
 using TUnit.Assertions.Extensions;
 using TUnit.Core;
 
-namespace ManagedCode.Playwright.Stealth.Tests;
+namespace OrdinaryRoad.Playwright.Stealth.Tests;
 
 public sealed class StealthConfigTests
 {

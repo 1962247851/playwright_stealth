@@ -1,4 +1,4 @@
-namespace ManagedCode.Playwright.Stealth.Tests;
+namespace OrdinaryRoad.Playwright.Stealth.Tests;
 
 internal static class StealthTestSites
 {
