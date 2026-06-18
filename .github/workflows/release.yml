@@ -2,7 +2,7 @@ name: Release
 
 on:
   push:
-    branches: [ main ]
+    tags: [ 'v*' ]
   workflow_dispatch:
 
 env:
@@ -57,6 +57,9 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     if: startsWith(github.ref, 'refs/tags/v') || github.event_name == 'workflow_dispatch'
+    permissions:
+      contents: read
+      id-token: write
 
     outputs:
       published: ${{ steps.publish.outputs.published }}
@@ -77,9 +80,14 @@ jobs:
         with:
           dotnet-version: ${{ env.DOTNET_VERSION }}
 
+      - name: NuGet login
+        id: login
+        uses: NuGet/login@v1
+        with:
+          user: OrdinaryRoad
+
       - name: Publish to NuGet
         id: publish
-        continue-on-error: true
         run: |
           set +e
           OUTPUT=""
@@ -88,8 +96,8 @@ jobs:
           for package in ./artifacts/*.nupkg; do
             echo "Publishing $package..."
             RESULT=$(dotnet nuget push "$package" \
-              --api-key ${{ secrets.NUGET_API_KEY }} \
               --source https://api.nuget.org/v3/index.json \
+              --api-key "${{ steps.login.outputs.NUGET_API_KEY }}" \
               --skip-duplicate 2>&1)
             EXIT_CODE=$?
             echo "$RESULT"
@@ -115,10 +123,12 @@ jobs:
           fi
 
   create-release:
-    name: Create GitHub Release and Tag
+    name: Create GitHub Release
     needs: publish-nuget
     runs-on: ubuntu-latest
     if: needs.publish-nuget.outputs.published == 'true'
+    permissions:
+      contents: write
 
     steps:
       - name: Checkout
@@ -132,25 +142,6 @@ jobs:
         with:
           name: nuget-packages
           path: ./artifacts
-
-      - name: Create and push tag
-        id: create_tag
-        run: |
-          VERSION="${{ needs.publish-nuget.outputs.version }}"
-          TAG="v$VERSION"
-
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-
-          if git rev-parse "$TAG" >/dev/null 2>&1; then
-            echo "Tag $TAG already exists"
-            echo "tag_exists=true" >> $GITHUB_OUTPUT
-          else
-            echo "Creating tag $TAG"
-            git tag -a "$TAG" -m "Release $VERSION"
-            git push origin "$TAG"
-            echo "tag_exists=false" >> $GITHUB_OUTPUT
-          fi
 
       - name: Get previous tag
         id: prev_tag
