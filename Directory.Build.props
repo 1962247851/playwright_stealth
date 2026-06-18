@@ -26,8 +26,8 @@
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <EnablePackageValidation>true</EnablePackageValidation>
     <PackageReadmeFile>README.md</PackageReadmeFile>
-    <RepositoryUrl>https://github.com/ordinaryroad/playwright_stealth</RepositoryUrl>
-    <PackageProjectUrl>https://github.com/ordinaryroad/playwright_stealth</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/1962247851/playwright_stealth</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/1962247851/playwright_stealth</PackageProjectUrl>
     <Product>OrdinaryRoad Playwright Stealth</Product>
     <Version>1.0.0</Version>
     <PackageVersion>1.0.0</PackageVersion>
